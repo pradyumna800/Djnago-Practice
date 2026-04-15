@@ -1,0 +1,43 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<center>
+    <h1>NEWS PAGE</h1>
+    <br>
+    <br>
+    <h1>Latest News</h1>
+    <br>
+    <br>
+    {% for i in data %}
+        {% if i.id == 3 %}
+            <pre>
+
+
+
+
+
+
+
+            </pre>
+            <hr>
+            <br>
+            <h1>Previous News</h1>
+            <br>
+            <br>
+            <h2>{{i.title}}</h2>
+            <p>{{i.desc|truncatewords:5}}</p>
+            <button style="border: 2px solid black; height: 30px; width: 90px; background-color: green; border-radius: 6px;"><a href="{% url 'news_show' i.id %}" style="text-decoration: none; color: white;">Read Nore</a></button>
+        {% else %}
+            <h2>{{i.title}}</h2>
+            <p>{{i.desc|truncatewords:5}}</p>
+            <button style="border: 2px solid black; height: 30px; width: 90px; background-color: green; border-radius: 6px;"><a href="{% url 'news_show' i.id %}" style="text-decoration: none; color: white;">Read Nore</a></button>
+            <pre>
+
+
+
+
+            </pre>
+        {% endif %}
+    {% endfor %}
+</center>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<!-- <h1>this is base event page</h1> -->
+<center>
+    <h1>Upcoming Events</h1>
+    <br>
+    {% for i in data %}
+        {% if i.id == 3 %}
+            <pre>
+
+
+            </pre>
+            <hr>
+            <br>
+            <br>
+
+            <h1>Past Events</h1>
+            <br>
+            <h2>{{i.title}}</h2>
+            <p>{{i.date}}</p>
+            <p>{{i.desc}}</p>
+        {% else %}
+            <h2>{{i.title}}</h2>
+            <p>{{i.date}}</p>
+            <p>{{i.desc}}</p>
+        {% endif %}
+    {% endfor %}
+</center>
+{% endblock %}
