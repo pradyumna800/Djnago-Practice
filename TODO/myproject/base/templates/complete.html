@@ -1,0 +1,28 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block css_content %}
+<link rel="stylesheet" href="{% static 'base/base.css' %}">
+{% endblock %}
+
+{% block content %}
+<h1>this is complete page</h1>
+<center>
+    {% for i in data %}
+    <div class="box1">
+        <h1>Title : {{i.title}}</h1>
+        <h1>Desc : {{i.desc}}</h1>
+        <br>
+        <a href="{% url 'c_delete' i.id %}">DELETE</a>
+        <a href="{% url 'c_restore' i.id %}">RESTORE</a>
+    </div>
+    {% endfor %}
+    <br><br>
+    
+    {% if data %}
+    <a href="{% url 'c_delete_all' %}">DELETE ALL</a>
+    <a href="{% url 'c_restore_all' %}">RESTORE ALL</a>
+    {% endif %}
+    
+</center>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block css_content %}
+<link rel="stylesheet" href="{% static 'base/base.css' %}">
+{% endblock %}
+
+{% block content %}
+<h1>this is home page</h1>
+<center>
+    {% for i in data %}
+            <div class="box1">
+                <h1>Title : {{i.title}}</h1>
+                <h1>Desc : {{i.desc}}</h1>
+                <br>
+                <a href="{% url 'update' i.id %}">UPDATE</a>
+                <a href="{% url 'complete_' i.id %}">COMPLETE</a>
+                <a href="{% url 'delete_' i.id %}">DELETE</a>
+            </div>
+    {% endfor %}
+    <br>
+    <br>
+    {% if data %}
+    <a href="{% url 'complete_all' %}">COMPLETE ALL</a>
+    <a href="{% url 'delete_all' %}">DELETE ALL</a>
+    {% endif %}
+</center>
+{% endblock %}

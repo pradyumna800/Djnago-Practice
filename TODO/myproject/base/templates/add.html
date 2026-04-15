@@ -1,0 +1,25 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block css_content %}
+<link rel="stylesheet" href="{% static 'base/base.css' %}">
+{% endblock %}
+
+{% block content %}
+<h1>this is add page</h1>
+<h1 style="color: red;">{{notic}}</h1>
+<center>
+    <form action="" method="POST">
+        {% csrf_token %} <!--To avoid the fake request from other websites-->
+        <label for="">TITLE</label>
+        <input type="text" name="title" id="">
+        <br>
+        <br>
+        <label for="">DESC</label>
+        <input type="text" name="desc" id="">
+        <br>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+</center>
+{% endblock %}

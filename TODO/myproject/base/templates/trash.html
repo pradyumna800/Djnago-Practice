@@ -1,0 +1,24 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block css_content %}
+<link rel="stylesheet" href="{% static 'base/base.css' %}">
+{% endblock %}
+
+{% block content %}
+<h1>this is trash page</h1>
+<center>
+    {% for i in data %}
+    <div class="box1">
+        <h1>Title : {{i.title}}</h1>
+        <h1>Desc : {{i.desc}}</h1>
+        <br>
+        <a href="{% url 't_delete' i.id %}">DELETE PARMANETLLY</a>
+    </div>
+    {% endfor %}
+    
+    {% if data %}
+    <a href="{% url 't_delete_all' %}">DELETE ALL PARMANETLLY</a>
+    {% endif %}
+</center>
+{% endblock %}
