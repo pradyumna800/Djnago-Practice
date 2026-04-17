@@ -1,0 +1,20 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<h1>Happy Rose day baby....🌹🌹🌹🌹🌹🌹🌹🌹🌹🌹🌹🌹🌹🌹🌹🌹🌹🌹</h1>
+<h1>You are mine💕💕💕💕💕💕, only mine............................</h1>
+<h1>Name : {{name}}</h1>
+<h1>Nick_name : {{nick_name}}</h1>
+<h1>Entry : {{entry}}</h1>
+<h1>Officially_entry : {{officially_engaged}}</h1>
+{% for i in name %}
+    <h1>{{i}}</h1>
+{% endfor %}
+{% if False %}
+    <h1>this is a true statement block</h1>
+{% elif False %}
+    <h1>tthis is elif block</h1>
+{% else %}
+    <h1>this is else block</h1>
+{% endif %}
+{% endblock %}
