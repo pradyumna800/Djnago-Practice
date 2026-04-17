@@ -1,0 +1,17 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/student.css'%}">
+</head>
+<body>
+    <h1>FEATCH THE DETAILS OF STUDENT</h1>
+    <a href="{% url 'Home' 1 %}">STUDENT 1</a>
+    <a href="{% url 'Home' 2 %}">STUDENT 2</a>
+    <a href="{% url 'Home' 3 %}">STUDENT 3</a>
+    <a href="{% url 'Home' 4 %}">STUDENT 4</a>
+</body>
+</html>
