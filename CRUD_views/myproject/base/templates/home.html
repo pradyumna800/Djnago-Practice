@@ -1,0 +1,45 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<h1>this is home page</h1>
+
+<center>
+    <form action="" method="POST">
+        {% csrf_token %}  <!-- cross size request forgery -->
+        <label for="">Name</label>
+        <input type="text" name="name" id="">
+        <br><br>
+        <label for="">Price</label>
+        <input type="text" name="price" id="">
+        <br><br>
+        <button type="submit">Submit</button>
+    </form>
+</center>
+
+<center>
+    <h1>GET METHOD</h1>
+    <h1>{{data}}</h1>
+    <h1>{{data.name}}</h1>
+    <h1>{{data.price}}</h1>
+</center>
+
+
+<center>
+    <h1>All Method</h1>
+    <h1>{{data1}}</h1>
+
+    {% for i in data1 %}
+      <h1>{{i.name}} // {{i.price}}</h1>
+    {% endfor %}
+</center>
+
+<center>
+    <h1>FILTER METHOD</h1>
+    <h1>{{a}}</h1>
+
+    {% for i in a %}
+        <h1>{{i.name}} // {{i.price}}</h1>
+    {% endfor %}
+</center>
+
+{% endblock %}
